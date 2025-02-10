@@ -112,6 +112,8 @@ header .a:hover {
     column-gap: 5%;
     margin-top: 20px;
     margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 1%;
     border: 1px solid black;
 }
@@ -125,6 +127,14 @@ header .a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.display_wolf #wolf_header input{
+    border: none;
+    background: #DEB959;
+    color: white;
+    font-size: 28px;
+    padding: 6px 30px;
 }
 
 .display_wolf #wolf_header h2{
@@ -142,7 +152,7 @@ header .a:hover {
 
 .display_wolf p {
     font-size: 18px;
-    font-weight: 50;
+    font-weight: 400;
 }
 
 
