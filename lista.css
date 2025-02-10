@@ -2,7 +2,6 @@ main {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
 }
 
 #main_content{
@@ -42,6 +41,18 @@ main {
     padding: 5px 22px;
 }
 
+#searchbar input[type=button]:hover{
+    box-shadow: 0px 0px 5px 5px #2C5680;
+    scale: 1.1;
+    transition: 0.2s;
+}
+
+#searchbar input[type=button]:active{
+    box-shadow: 0px 0px 5px 5px #2C5680;
+    background: #2C5680;
+    transition: 0s;
+}
+
 #searchbar img {
     position: relative;
     display: grid;
@@ -78,15 +89,22 @@ main {
     /* AQUI VOCE VAI MUDAR O FLEX DIRECTION NO JS se for par ou impar troca entre row e row-reverse */
     flex-direction: row-reverse;
     column-gap: 5%;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 50px;
     
     padding: 1%;
-    border: 1px solid black;
+    border: none;
 }
 
 .display_wolf img{
-    border: #85CDF5 3px solid;
+    box-shadow: -20px -20px #2C5680;
+    transform: translate(20px, 20px);
+}
+
+.display_wolf img:hover{
+    scale: 1.3;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px 5px #2C5680;
 }
 
 .display_wolf #wolf_header {
@@ -102,6 +120,17 @@ main {
     color: white;
     font-size: 28px;
     padding: 6px 30px;
+}
+
+.display_wolf #wolf_header input:hover{
+    box-shadow: 0px 0px 20px 10px #2C5680;
+    scale: 1.4;
+    transition: 0.4s;
+}
+
+.display_wolf #wolf_header input:active{
+    background: #2C5680;
+    transition: 0s;
 }
 
 .display_wolf #wolf_header h2{
@@ -137,16 +166,26 @@ main {
     display: flex;
     flex-direction: row;
     column-gap: 2px;
+    font-size: 18px;
 }
 
 #pagebrowse input {
     border: none;
     background-color: transparent;
+    font-size: 18px;
 }
 
 #pagebrowse input:hover{
     background-color: goldenrod;
+    scale: 1.2;
+    transition: 0.3s;
+    padding: 5px;
+    border: 1px solid #2C5680;
+}
 
+#pagebrowse input:active{
+    background: #2C5680;
+    transition: 0s;
 }
 
 /*-----------------------------------------------*/
