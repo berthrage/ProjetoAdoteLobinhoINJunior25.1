@@ -1,3 +1,14 @@
+@font-face{
+    font-family: 'Alata';
+    src: url('https://fonts.googleapis.com/css2?family=Alata&family=Darker+Grotesque:wght@500&display=swap') format('truetype');
+}
+
+* {
+    font-family: 'Alata';
+    font-weight: 700;
+}
+  
+
 header {
     background-color: #85CDF5;
     width: 100%;
@@ -30,26 +41,37 @@ header .a:hover {
 
 /*-----------------------------------------------*/
 
-main {
+#main_content{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
-main p {
-    width: 960px;
-    height: 134px;
+#searchbar {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    margin-bottom: 80px;
+    column-gap: 10px;
 }
 
-main h1 {
-    margin-top: 80px;
+#searchbar input[type=text]{
+    width: 600px;
+    padding: 15px;
+    border: 1px solid #333333
+    
+}
+#searchbar input[type=button]{
+    border: none;
+    padding: 5px;
+    background: #DEB959;
+    
+}
+
+#searchbar img {
+    position: absolute;
 }
 
 /*-----------------------------------------------*/
