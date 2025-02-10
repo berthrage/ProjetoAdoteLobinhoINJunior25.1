@@ -1,3 +1,13 @@
+@font-face{
+    font-family: 'Alata';
+    src: url('https://fonts.googleapis.com/css2?family=Alata&family=Darker+Grotesque:wght@500&display=swap') format('truetype');
+}
+
+* {
+    font-family: 'Alata';
+}
+  
+
 header {
     background-color: #85CDF5;
     width: 100%;
@@ -17,7 +27,6 @@ header {
 }
 
 header .a {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: 700;
     color: black;
@@ -30,27 +39,148 @@ header .a:hover {
 
 /*-----------------------------------------------*/
 
-main {
+#main_content{
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#main_content_header{
+    display: grid;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
 }
 
-main p {
-    width: 960px;
-    height: 134px;
+#searchbar {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    margin-bottom: 80px;
+    justify-content: center;
+    column-gap: 15px;
 }
 
-main h1 {
-    margin-top: 80px;
+#searchbar input[type=text]{
+    width: 800px;
+    margin-left: -43px;
+    border: 1px solid #333333;
+    padding: 5px 50px;
 }
+
+#searchbar input[type=button]{
+    border: none;
+    background: #DEB959;
+    color: white;
+    font-size: 28px;
+    padding: 5px 22px;
+}
+
+#searchbar img {
+    position: relative;
+    display: grid;
+    align-self: center;
+    transform: translateX(15px);
+}
+
+#checkmarks div{
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    column-gap: 15px;
+}
+
+#checkmarks div input {
+    box-sizing: border-box;
+    background: #FAFAFA;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    width: 20px;
+    height: auto;
+
+}
+
+.display_wolf {
+    display: flex;
+
+    /* AQUI VOCE VAI MUDAR O FLEX DIRECTION NO JS se for par ou impar troca entre row e row-reverse */
+    flex-direction: row-reverse;
+
+    column-gap: 5%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+    border: 1px solid black;
+}
+
+.display_wolf img{
+    border: #85CDF5 3px solid;
+}
+
+.display_wolf #wolf_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display_wolf #wolf_header input{
+    border: none;
+    background: #DEB959;
+    color: white;
+    font-size: 28px;
+    padding: 6px 30px;
+}
+
+.display_wolf #wolf_header h2{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.display_wolf #wolf_header h5{
+    margin: 3px;
+    margin-left: 0px;
+    font-size: 16px;
+    color: grey;
+    font-weight: 100;
+}
+
+.display_wolf p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+#pagebrowse {
+    display: flex;
+    border: none;
+    flex-direction: row;
+    justify-items: center;
+    align-self: center;
+    column-gap: 5px;
+}
+
+#pagebrowse div{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2px;
+}
+
+#pagebrowse input {
+    border: none;
+    background-color: transparent;
+}
+
+#pagebrowse input:hover{
+    background-color: goldenrod;
+
+}
+
 
 /*-----------------------------------------------*/
 

@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adote Um Lobinho - Lista de Lobinhos</title>
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Darker+Grotesque:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lista.css">
 </head>
 <body>
@@ -16,50 +19,53 @@
 
 
     <main>
-        <div id="barra_pesquisa">
-            <img src="assets\icons\search-icon.png" alt = "icone_busca">
-            <input type="text" placeholder="">
-            <input type="button" value="+ lobo">
-        </div>
-        <div id = "checkmarks">
-            <div>
-                <input type="checkbox" name = "ver_lobinhos" placeholder="">
-                <p>Ver lobinhos adotados</p>
+        <div id="main_content">
+            <div id = "main_content_header">
+                <div id="searchbar">
+                    <img src="assets\icons\search-icon.png" alt = "icone_busca">
+                    <input type="text" placeholder="">
+                    <input type="button" value="+ Lobo">
+                </div>
+                <div id = "checkmarks">
+                    <div>
+                        <input type="checkbox" name = "ver_lobinhos" placeholder="">
+                        <p>Ver lobinhos adotados</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="lista_lobos">
-            
-            <div class="lobo_display" id = "lobo_exemplo">
-                <div>
-                    <div id = "header_lobo">
-                        <div>
-                            <h2>Nome do Lobo</h2>
-                            <h5>Idade: XX Anos</h5>
-                        </div>
-                        <div>
+
+            <div id="wolf_list">
+                <div class="display_wolf" id = "wolf_example">
+                    <div>
+                        <div id = "wolf_header">
+                            <div>
+                                <h2>Nome do Lobo</h2>
+                                <h5>Idade: XX Anos</h5>
+                            </div>
                             <input type="button" value="Adotar">
                         </div>
+                        <div>
+                            <p>
+                                Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas. Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p>
-                            Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas. Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.
-                        </p>
-                    </div>
+                    <img src="assets/images/lobo4.jpeg" width="300" height="auto" alt = "lobo1">
                 </div>
-                <img src="assets/images/lobo1.jpeg" alt = "lobo1">
+                
             </div>
-            
-        </div>
-        <div id="navegacao">
-            <input type="button" value="<">
-                <div id="paginas">
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="3">
-                    <input type="button" value="4">
-                    <input type="button" value="5">
-                </div>
-            <input type="button" value=">">
+            <div id="pagebrowse">
+                <input type="button" value="<<">
+                    <div id="pages">
+                        <input type="button" value="1">
+                        <input type="button" value="2">
+                        <input type="button" value="3">
+                        <input type="button" value="4">
+                        <input type="button" value="5">
+                        <input type="button" value="...">
+                    </div>
+                <input type="button" value=">>">
+            </div>
         </div>
     </main>
 
