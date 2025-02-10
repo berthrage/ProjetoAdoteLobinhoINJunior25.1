@@ -27,3 +27,5 @@ let lobos = JSON.parse(localStorage.getItem('lobos'));
 console.log(lobos);
 
 //localStorage.setItem('lobos', JSON.stringify(lobos)); -- atualizar localStorage
+
+let lista_lobos = document.querySelector("#lista_lobos");
