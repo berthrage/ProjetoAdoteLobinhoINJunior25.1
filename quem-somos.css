@@ -18,6 +18,11 @@ a {
     color: var(--footer-grey);
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 header {
     background-color: var(--wolfie-baby-blue);
     color: var(--footer-grey);
@@ -125,21 +130,20 @@ iframe{
     flex-wrap: wrap;
 }
 
-#section1 a{
-    color: #353535;
+.footer-quem-somos-button {
     background-color: #DEB959;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 25px;
+    width: 144px;
+    height: 35px;
+    color: #353535;
+    font-weight: 600;
+    font-size: 20px;
     line-height: 20px;
-    width: 154px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
+    transition: 0.5s;
 }
 
-#section1 a:hover{
-    text-decoration: underline;
+.footer-quem-somos-button:hover {
+    background-color: #aa8d43;
 }
 
 #section2 {
@@ -147,6 +151,7 @@ iframe{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 #section2 h4 {
