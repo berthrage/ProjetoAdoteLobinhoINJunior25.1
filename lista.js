@@ -1,18 +1,4 @@
-async function inicializarLocalStorage() {
-    try {
-        const response = await fetch('lobinhos.json');
-        if (!response.ok) {
-            throw new Error(`Erro ao buscar lobinho.json: ${response.statusText}`);
-        }
-        const lobos = await response.json();
-        localStorage.setItem('lobos', JSON.stringify(lobos));
-        console.log('Lobos inicializados no localStorage');
-    } catch (error) {
-        console.error('Erro ao inicializar o localStorage:', error);
-    } finally {
-        console.log('Tentativa de inicialização do localStorage concluída');
-    }
-}
+import { inicializarLocalStorage, getLobos, updateLocalStorage } from "./script.js";
 
 if (!localStorage.getItem('lobos')) {
     inicializarLocalStorage().then(() => {
@@ -22,9 +8,9 @@ if (!localStorage.getItem('lobos')) {
     });
 }
 
-let lobos = JSON.parse(localStorage.getItem('lobos'));
+let lobos = getLobos();
 
-//localStorage.setItem('lobos', JSON.stringify(lobos)); -- atualizar localStorage
+console.log(lobos);
 
 let page = 1;
 let wolfList = document.querySelector("#wolf_list");
