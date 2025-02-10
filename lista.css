@@ -105,11 +105,44 @@ header .a:hover {
 
 .display_wolf {
     display: flex;
-    /* AQUI VOCE VAI MUDAR O FLEX DIRECTION NO JS */
+
+    /* AQUI VOCE VAI MUDAR O FLEX DIRECTION NO JS se for par ou impar troca entre row e row-reverse */
     flex-direction: row-reverse;
+
+    column-gap: 5%;
     margin-top: 20px;
     margin-bottom: 50px;
+    padding: 1%;
     border: 1px solid black;
+}
+
+.display_wolf img{
+    border: #85CDF5 3px solid;
+}
+
+.display_wolf #wolf_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display_wolf #wolf_header h2{
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.display_wolf #wolf_header h5{
+    margin: 3px;
+    margin-left: 0px;
+    font-size: 16px;
+    color: grey;
+    font-weight: 100;
+}
+
+.display_wolf p {
+    font-size: 18px;
+    font-weight: 50;
 }
 
 
