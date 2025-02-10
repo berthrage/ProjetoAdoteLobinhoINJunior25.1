@@ -21,3 +21,9 @@ if (!localStorage.getItem('lobos')) {
         console.error('Erro durante a inicialização do localStorage:', error);
     });
 }
+
+let lobos = JSON.parse(localStorage.getItem('lobos'));
+
+console.log(lobos);
+
+//localStorage.setItem('lobos', JSON.stringify(lobos)); -- atualizar localStorage
