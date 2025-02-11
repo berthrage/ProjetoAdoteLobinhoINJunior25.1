@@ -14,10 +14,10 @@ let lobos = getLobos();
 let id = Object.keys(lobos).length;
 
 function adicionarLobinho(){
-    let inputNome = document.querySelector("#nome");
-    let inputIdade = document.querySelector("#idade");
-    let inputLink = document.querySelector("#link");
-    let inputDescricao = document.querySelector("#descricao");
+    let inputNome = document.querySelector("#name-input"); 
+    let inputIdade = document.querySelector("#age-input"); 
+    let inputLink = document.querySelector("#link-input"); 
+    let inputDescricao = document.querySelector("#description-input");
 
     let nome = inputNome.value;
     let idade = inputIdade.value;
@@ -42,7 +42,6 @@ function adicionarLobinho(){
         nomeDono: null,
         idadeDono: null,
         emailDono: null,
-
     };
 
     lobos.push(novoLobo);
@@ -54,6 +53,7 @@ function adicionarLobinho(){
     inputLink.value = "";
     inputDescricao.value = "";
 
+    alert("Lobo adicionado com sucesso!!")
 }
 
 
