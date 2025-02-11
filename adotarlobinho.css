@@ -3,22 +3,33 @@
     flex-direction: column;
     align-items: center;
     margin: 20px 50px;
+    width: 1000px;
+    align-self: center;
 }
+
 #wolfData{
     display: flex;
     flex-direction: row;
-    column-gap: 50px;
+    column-gap: 20px;
     align-items: start;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#wolfData div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 #nome_lobo{
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 #id_lobo{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -26,14 +37,15 @@
     clip-path: circle();
     width: 350px;
     height: auto;
+    margin-left: 0px;
 }
 
 #form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     row-gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-top: 10px;
     font-size: 30px;
     font-weight: 100;
@@ -42,12 +54,24 @@
 
 #name_age{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 #nome_usuario{
-    width: 70%;
+    width: 230%;
 }
+
+#form input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    margin-top: 25px;
+    
+}
+
 
 #name_age div{
     display: flex;
@@ -60,12 +84,17 @@
 }
 
 #idade_usuario{
-    width: 100px;
+    width: 120px;
 }
 
 #botao_adotar{
-    padding: 10px 30px;
-    font-size: 30px;
+    padding: 15px 50px;
+    font-size: 40px;
     font-weight: 200;
+    margin-bottom: 30px;
+    color: white;
+    background: #2C5680;
+    border: 1px solid #333333;
+
 }
 
