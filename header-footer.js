@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 document.getElementById(id).innerHTML = data;
-                if (id === "header") removeLogoLinkIfNeeded(); 
+                if (id === "header") removeLogoLinkOnIndexPage(); 
             })
             .catch(error => console.error(`Error loading ${file}:`, error));
     }
 
    
-    function removeLogoLinkIfNeeded() {
+    function removeLogoLinkOnIndexPage() {
         if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
             let logoLink = document.querySelector(".logo");
             if (logoLink) {
