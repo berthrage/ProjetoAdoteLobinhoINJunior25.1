@@ -54,7 +54,7 @@
 
 #form h2 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0%;
 }
 
@@ -65,7 +65,7 @@
 }
 
 #nome_usuario{
-    width: 220%;
+    width: 215%;
 }
 
 #form input{
@@ -75,9 +75,7 @@
     border-bottom: 1px solid black;
     font-size: 30px;
     margin-top: 25px;
-    
 }
-
 
 #name_age div{
     display: flex;
