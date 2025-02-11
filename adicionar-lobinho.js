@@ -39,6 +39,12 @@ function adicionarLobinho(){
     let link = inputLink.value;
     let descricao = inputDescricao.value;
 
+    if (!nome || !idade || !link || !descricao){
+        alert("Preencha todos os espaços")
+        return
+    }
+        
+
     id+=1;
 
     let novoLobo = {

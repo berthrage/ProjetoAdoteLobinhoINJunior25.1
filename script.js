@@ -1,4 +1,4 @@
-async function inicializarLocalStorage() {
+export async function inicializarLocalStorage() {
     try {
         const response = await fetch('lobinhos.json');
         if (!response.ok) {
@@ -14,16 +14,14 @@ async function inicializarLocalStorage() {
     }
 }
 
-if (!localStorage.getItem('lobos')) {
-    inicializarLocalStorage().then(() => {
-        console.log('Inicialização do localStorage concluída');
-    }).catch(error => {
-        console.error('Erro durante a inicialização do localStorage:', error);
-    });
+export function getLobos() {
+    return JSON.parse(localStorage.getItem('lobos'));
 }
 
-let lobos = JSON.parse(localStorage.getItem('lobos'));
-
-console.log(lobos);
-
-//localStorage.setItem('lobos', JSON.stringify(lobos)); -- atualizar localStorage
+export function updateLocalStorage() {
+    try {
+        localStorage.setItem('lobos', JSON.stringify(lobos));
+    } catch (error) {
+        console.error('Erro ao *atualizar* localStorage');
+    }
+}
