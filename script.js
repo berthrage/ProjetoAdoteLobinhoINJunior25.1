@@ -18,7 +18,7 @@ export function getLobos() {
     return JSON.parse(localStorage.getItem('lobos'));
 }
 
-export function updateLocalStorage() {
+export function updateLocalStorage(lobos) {
     try {
         localStorage.setItem('lobos', JSON.stringify(lobos));
     } catch (error) {
