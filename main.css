@@ -126,7 +126,7 @@ footer #section1 {
     height: 5px;
     background: linear-gradient(to right, var(--highlight-yellow), var(--about-blue));
     position: absolute;
-    top: -12%;
+    top: 0;
     left: 0;
 }
 
