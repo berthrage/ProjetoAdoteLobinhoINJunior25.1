@@ -99,8 +99,12 @@
     font-weight: 200;
     margin-bottom: 30px;
     color: white;
-    background: #2C5680;
-    border: 1px solid #333333;
+    background: var(--about-blue);
+    border: 1px solid var(--footer-grey);
+    transition: 0.5s;
+}
 
+#botao_adotar:hover {
+    background-color: #1c3650;
 }
 
