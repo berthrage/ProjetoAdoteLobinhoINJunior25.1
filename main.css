@@ -42,13 +42,28 @@ header {
     height: 110.72px;
 }
 
-header .a {
+header a {
+    position: relative;
     font-size: 30px;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
 }
 
-header .a:hover {
-    text-decoration: underline;
+header a .selection-line {
+    width: 0%;
+    height: 5px;
+    background-color: var(--footer-grey);
+    display: flex;
+    transition: 0.5s;
+}
+
+header a:nth-of-type(3) .selection-line {
+    align-self: flex-end;
+}
+
+header a:hover .selection-line {
+    width: 66%
 }
 
 /*-----------------------------------------------*/

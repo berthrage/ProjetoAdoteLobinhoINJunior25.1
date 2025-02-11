@@ -8,9 +8,9 @@ if (!localStorage.getItem('lobos')) {
     });
 }
 
-let lobos = JSON.parse(localStorage.getItem('lobos'));
+let lobos = getLobos();
 
-//localStorage.setItem('lobos', JSON.stringify(lobos)); -- atualizar localStorage
+console.log(lobos);
 
 let page = 1;
 let wolfList = document.querySelector("#wolf_list");
