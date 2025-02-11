@@ -131,6 +131,8 @@ function ExibirLobo(loboId, par){
     } else {
         lista = lobos;
     }
+
+    let botaoAdotar = document.createElement("input");
     let novoLobo = document.createElement("div");
     novoLobo.className = "display_wolf";
 
@@ -150,9 +152,10 @@ function ExibirLobo(loboId, par){
     let loboImagem = document.createElement("img");
     loboImagem.src = lista[loboId].imagem;
 
+
     let divHor = document.createElement("div");
+    divHor.id = "wolf_totalinfo";
     
-    let botaoAdotar = document.createElement("input");
     botaoAdotar.type = "button";
     botaoAdotar.value = "Adotar";
     if(lista[loboId].adotado){
@@ -165,13 +168,14 @@ function ExibirLobo(loboId, par){
         window.location.href = "./show-lobinho.html"
 
     })
-    
+
     let divInfo = document.createElement("div");
     divInfo.id = "wolf_header";
 
     let divNomeIdade = document.createElement("div");
 
     let divDescricao = document.createElement("div");
+    divDescricao.id ="wolf_desc"
 
     novoLobo.append(divHor);
     novoLobo.append(loboImagem);
