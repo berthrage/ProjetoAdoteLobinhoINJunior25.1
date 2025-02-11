@@ -124,7 +124,13 @@ footer {
     line-height: 15px;
 }
 
-footer #section1 {
+.map-info {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+footer #info-section {
     width: auto;
     height: 168px;
     display: flex;
@@ -183,7 +189,7 @@ iframe{
     background-color: var(--highlight-yellow-hovered);
 }
 
-#section2 {
+#developed-with-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,7 +197,7 @@ iframe{
     gap: 10px;
 }
 
-#section2 h4 {
+#developed-with-section h4 {
     color: white;
     font-weight: 400;
 }
