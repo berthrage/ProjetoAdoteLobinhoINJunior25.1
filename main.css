@@ -49,8 +49,13 @@ header {
 .logo {
     background-color: var(--wolfie-baby-blue);
     border: none;
-    width: 95.55px;
-    height: 110.72px;
+    width: 96.55px;
+    height: 112.72px;
+    background-image: url(./assets/icons/adote-lobinho-icon.png);
+}
+
+.logo:hover {
+    background-image: url(./assets/icons/adote-lobinho-blink-icon.png);
 }
 
 header a {
