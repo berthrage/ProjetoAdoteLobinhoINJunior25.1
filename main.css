@@ -1,3 +1,4 @@
+/*---------------- GLOBAL ------------------*/
 * {
     padding: 0;
     margin: 0;
@@ -6,11 +7,15 @@
 :root {
     --wolfie-baby-blue: #85CDF5;
     --footer-grey: #333333;
+    --about-blue: #2C5680;
+    --highlight-yellow: #DEB959;
 }
 
 body {
     font-family: "Darker Grotesque", sans-serif;
     background-color: var(--footer-grey);
+    z-index: -1;
+    position: relative;
 }
 
 a {
@@ -18,10 +23,16 @@ a {
     color: var(--footer-grey);
 }
 
+p {
+    font-weight: 100;
+}
+
 button {
     border: none;
     cursor: pointer;
 }
+
+/*---------------- HEADER ------------------*/
 
 header {
     background-color: var(--wolfie-baby-blue);
@@ -38,14 +49,21 @@ header {
 .logo {
     background-color: var(--wolfie-baby-blue);
     border: none;
-    width: 95.55px;
-    height: 110.72px;
+    width: 96.55px;
+    height: 112.72px;
+    background-image: url(./assets/icons/adote-lobinho-icon.png);
+}
+
+.logo:hover {
+    background-image: url(./assets/icons/adote-lobinho-blink-icon.png);
 }
 
 header a {
     position: relative;
     font-size: 30px;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
     display: flex;
     flex-direction: column;
 }
@@ -63,12 +81,25 @@ header a:nth-of-type(3) .selection-line {
 }
 
 header a:hover .selection-line {
+    width: 66%;
+    height: 5px;
+    background-color: var(--footer-grey);
+    display: flex;
+    transition: 0.5s;
+}
+
+header a:nth-of-type(3) .selection-line {
+    align-self: flex-end;
+}
+
+header a:hover .selection-line {
     width: 66%
 }
 
-/*-----------------------------------------------*/
+/*---------------- FOOTER ------------------*/
 
 footer {
+    position: relative;
     background-color: var(--footer-grey);
     width: 100%;
     height: 270px;
@@ -88,6 +119,15 @@ footer #section1 {
     flex-direction: column;
     justify-content: center;
     gap: 25px;
+}
+
+.footer-gradient {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--highlight-yellow), var(--about-blue));
+    position: absolute;
+    top: -12%;
+    left: 0;
 }
 
 iframe{
@@ -142,5 +182,4 @@ iframe{
 #section2 h4 {
     color: white;
     font-weight: 400;
-
 }
