@@ -10,50 +10,81 @@ if (!localStorage.getItem('lobos')) {
 
 let lobos = getLobos();
 
+let lobosAdotados = lobos.filter(lobo =>{
+    return lobo.adotado == true;
+}
+);
+
 console.log(lobos);
 
 let page = 1;
 let wolfList = document.querySelector("#wolf_list");
-let pageBrowser = document.querySelector('#pagebrowse');
 let pages = document.querySelector('#pages');
 
 let searchbar = document.querySelector("#searchbar input[type=text]");
-let searchButton = document.querySelector("#searchbar input[type=button]");
+searchbar.addEventListener("keyup", event =>{
+    if(event.keyCode === 13){
+        Pesquisar();
+    }
+})
+
+// document.querySelector("#addLinks").addEventListener("keyup", event => {
+//     if(event.key !== "Enter") return; // Use `.key` instead.
+//     document.querySelector("#linkadd").click(); // Things you want to do.
+//     event.preventDefault(); // No need to `return false;`.
+// });
+
+// let searchButton = document.querySelector("#searchbar input[type=button]");
 
 let checkAdopt = document.querySelector("#checkmarks div input");
+
+let firstPage = document.querySelector('#firstPage')
+firstPage.addEventListener("click", ()=>{Pagina(1)});
+let lastPage = document.querySelector('#finalPage');
+lastPage.addEventListener("click", ()=>{Pagina(LastPageFind())});
+
+function LastPageFind(){
+    if(checkAdopt.checked){
+        return (Math.round((Object.keys(lobosAdotados).length)/4));
+    } else {
+        return (Math.round((Object.keys(lobos).length)/4));
+    }
+}
 
 if(wolfList){
     Pagina(page);
     pages.childNodes.forEach((botaoPagina) =>
         botaoPagina.addEventListener("click", () => {
-            numero = botaoPagina.value;
+            let numero = botaoPagina.value;
             page = numero;
-            PageSpread();
-            LimparLobos();
-            Pagina(numero);
-            
+            Pagina(numero);  
         })
     );
 };
 
-function PageSpread(){
-    let menorValor = page - 2;
+function PageSpread(numero){
+    let menorValor = numero - 2;
     if(menorValor <= 0){
         menorValor = 1;
     }
-    let botoes = pages.childNodes;
-    for(let i = menorValor; i < (menorValor + 5); i++){
-        botoes[i].value = i;
+    let maiorValor = menorValor + 4
+    let botoes = pages.children;
+    console.log(menorValor, maiorValor);
+    let valor = menorValor;
+    for(let i = 0; i < 5; i++){
+        botoes[i].value = valor;
+        valor++;
     }
+    console.log(LastPageFind);
 }
 
 checkAdopt.addEventListener("change", ()=>{
-    LimparLobos();
+    page = 1;
     Pagina(page);
 });
 
 
-searchButton.addEventListener("click", ()=>{Pesquisar()});
+// searchButton.addEventListener("click", ()=>{Pesquisar()});
 
 function Pesquisar(){
     if(searchbar.value){
@@ -62,13 +93,14 @@ function Pesquisar(){
         });
         if(lobosEncontrados.length > 0){
             LimparLobos();
-            if(!checkAdopt.checked){
-                if(lobosEncontrados[0].adotado){
-                    alert("lobo encontrado, mas é adotado");
+            if(checkAdopt.checked){
+                if(!lobosEncontrados[0].adotado){
+                    alert("lobo encontrado, mas não é adotado");
                     return;
                 }
             }
-            ExibirLobo((lobosEncontrados[0].id - 1));
+            let index = lobos.indexOf(lobosEncontrados[0])
+            ExibirLobo((index));
             return;
         } else {
             alert("Nenhum lobo encontrado");
@@ -84,22 +116,30 @@ function Pesquisar(){
 }
 
 function Pagina(numero){
-    let selecao = (numero + 3);
-    /* lobos a aparecerem = (seleção - 4) até seleção */
-    for(let i = (selecao - 4); i < selecao; i++){
+    LimparLobos();
+    let selecao = (numero * 4);
+    for(let i = (selecao - 4); i < selecao; i++){ 
         ExibirLobo(i, (i % 2 != 0));
     }
+    PageSpread(numero);
+    page = numero;
 }
 
 function LimparLobos(){
     wolfList.innerHTML = "";
 }
 
+function adotarLobinho(index){
+    localStorage.setItem("IndexLobo", index);
+}
+
+/* Usar lista de lobos adotados somente */
 function ExibirLobo(loboId, par){
-    if(!checkAdopt.checked){
-        if(lobos[loboId].adotado){
-            return;
-        }
+    let lista;
+    if(checkAdopt.checked){
+        lista = lobosAdotados;
+    } else {
+        lista = lobos;
     }
     let novoLobo = document.createElement("div");
     novoLobo.className = "display_wolf";
@@ -108,28 +148,33 @@ function ExibirLobo(loboId, par){
         novoLobo.style.flexDirection = "row";
     }
     
-
     let loboNome = document.createElement("h2");
-    loboNome.innerText = lobos[loboId].nome;
+    loboNome.innerText = lista[loboId].nome;
 
     let loboIdade = document.createElement("h5");
-    loboIdade.innerText = ("Idade: " + lobos[loboId].idade + " Anos");
+    loboIdade.innerText = ("Idade: " + lista[loboId].idade + " Anos");
     
     let loboDescricao = document.createElement("p");
-    loboDescricao.innerText = lobos[loboId].descricao;
+    loboDescricao.innerText = lista[loboId].descricao;
 
     let loboImagem = document.createElement("img");
-    loboImagem.src = lobos[loboId].imagem;
+    loboImagem.src = lista[loboId].imagem;
 
     let divHor = document.createElement("div");
     
     let botaoAdotar = document.createElement("input");
     botaoAdotar.type = "button";
     botaoAdotar.value = "Adotar";
-    if(checkAdopt.checked && lobos[loboId].adotado){
+    if(lista[loboId].adotado){
         botaoAdotar.value = "Adotado"
         botaoAdotar.style.background = "#7AAC3A";
     }
+
+    botaoAdotar.addEventListener("click", ()=>{
+        adotarLobinho(loboId);
+        window.location.href = "./show-lobinho.html"
+
+    })
     
     let divInfo = document.createElement("div");
     divInfo.id = "wolf_header";
@@ -147,7 +192,6 @@ function ExibirLobo(loboId, par){
     divInfo.append(botaoAdotar);
     divNomeIdade.append(loboNome);
     divNomeIdade.append(loboIdade);
-
 
     wolfList.append(novoLobo);
 }
