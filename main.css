@@ -99,6 +99,7 @@ header a:hover .selection-line {
 /*---------------- FOOTER ------------------*/
 
 footer {
+    position: relative;
     background-color: var(--footer-grey);
     width: 100%;
     height: 270px;
@@ -118,6 +119,15 @@ footer #section1 {
     flex-direction: column;
     justify-content: center;
     gap: 25px;
+}
+
+.footer-gradient {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--highlight-yellow), var(--about-blue));
+    position: absolute;
+    top: -12%;
+    left: 0;
 }
 
 iframe{
