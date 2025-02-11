@@ -22,18 +22,41 @@ let wolfList = document.querySelector("#wolf_list");
 let pages = document.querySelector('#pages');
 
 let searchbar = document.querySelector("#searchbar input[type=text]");
-let searchButton = document.querySelector("#searchbar input[type=button]");
+searchbar.addEventListener("keyup", event =>{
+    if(event.keyCode === 13){
+        Pesquisar();
+    }
+})
+
+// document.querySelector("#addLinks").addEventListener("keyup", event => {
+//     if(event.key !== "Enter") return; // Use `.key` instead.
+//     document.querySelector("#linkadd").click(); // Things you want to do.
+//     event.preventDefault(); // No need to `return false;`.
+// });
+
+// let searchButton = document.querySelector("#searchbar input[type=button]");
 
 let checkAdopt = document.querySelector("#checkmarks div input");
+
+let firstPage = document.querySelector('#firstPage')
+firstPage.addEventListener("click", ()=>{Pagina(1)});
+let lastPage = document.querySelector('#finalPage');
+lastPage.addEventListener("click", ()=>{Pagina(LastPageFind())});
+
+function LastPageFind(){
+    if(checkAdopt.checked){
+        return (Math.round((Object.keys(lobosAdotados).length)/4));
+    } else {
+        return (Math.round((Object.keys(lobos).length)/4));
+    }
+}
 
 if(wolfList){
     Pagina(page);
     pages.childNodes.forEach((botaoPagina) =>
         botaoPagina.addEventListener("click", () => {
             let numero = botaoPagina.value;
-            PageSpread(numero);
             page = numero;
-            LimparLobos();
             Pagina(numero);  
         })
     );
@@ -52,16 +75,16 @@ function PageSpread(numero){
         botoes[i].value = valor;
         valor++;
     }
+    console.log(LastPageFind);
 }
 
 checkAdopt.addEventListener("change", ()=>{
-    LimparLobos();
     page = 1;
     Pagina(page);
 });
 
 
-searchButton.addEventListener("click", ()=>{Pesquisar()});
+// searchButton.addEventListener("click", ()=>{Pesquisar()});
 
 function Pesquisar(){
     if(searchbar.value){
@@ -70,9 +93,9 @@ function Pesquisar(){
         });
         if(lobosEncontrados.length > 0){
             LimparLobos();
-            if(!checkAdopt.checked){
-                if(lobosEncontrados[0].adotado){
-                    alert("lobo encontrado, mas é adotado");
+            if(checkAdopt.checked){
+                if(!lobosEncontrados[0].adotado){
+                    alert("lobo encontrado, mas não é adotado");
                     return;
                 }
             }
@@ -92,12 +115,13 @@ function Pesquisar(){
 }
 
 function Pagina(numero){
-    let selecao = (numero + 3);
-    for(let i = (selecao - 4); i < selecao; i++){
-        
-        /* FAZER DIFERENCIACAO DAS LISTAS DE LOBOS AQUI */ 
-        
+    LimparLobos();
+    let selecao = (numero * 4);
+    for(let i = (selecao - 4); i < selecao; i++){ 
+        ExibirLobo(i, (i % 2 != 0));
     }
+    PageSpread(numero);
+    page = numero;
 }
 
 function LimparLobos(){
