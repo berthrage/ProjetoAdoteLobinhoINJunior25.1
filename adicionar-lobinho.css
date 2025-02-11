@@ -1,0 +1,24 @@
+.add-lobo {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-lobo #main-box {
+    border: 4px solid var(--footer-grey);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.add-lobo div h1 {
+    font-size: 60px;
+    text-align: center;
+}
