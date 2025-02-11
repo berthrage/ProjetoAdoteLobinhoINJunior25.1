@@ -1,0 +1,72 @@
+h1  {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+body{
+    background: white;
+}
+
+#main_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#main_content img {
+    width: 400px;
+    box-shadow: -20px -20px #2C5680;
+    transform: translate(20px, 20px);
+    transition: 0.5s;
+    margin: 3px;
+}
+
+
+
+#imagem_botoes{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+#descricao{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+#descricao p {
+    font-size: 26px;
+    font-weight: 500;
+    text-align:justify;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+}
+
+#buttons button{
+    padding: 22px 50px;
+    color: white;
+    font-size: 25px;
+    font-weight: 480;
+}
+
+#adotar {
+    background-color: #7AAC3A;
+    ;
+}
+
+#excluir {
+    background-color: #DE5959;
+
+}

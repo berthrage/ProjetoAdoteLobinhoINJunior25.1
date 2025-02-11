@@ -28,14 +28,6 @@ searchbar.addEventListener("keyup", event =>{
     }
 })
 
-// document.querySelector("#addLinks").addEventListener("keyup", event => {
-//     if(event.key !== "Enter") return; // Use `.key` instead.
-//     document.querySelector("#linkadd").click(); // Things you want to do.
-//     event.preventDefault(); // No need to `return false;`.
-// });
-
-// let searchButton = document.querySelector("#searchbar input[type=button]");
-
 let checkAdopt = document.querySelector("#checkmarks div input");
 
 let firstPage = document.querySelector('#firstPage')
@@ -69,13 +61,11 @@ function PageSpread(numero){
     }
     let maiorValor = menorValor + 4
     let botoes = pages.children;
-    console.log(menorValor, maiorValor);
     let valor = menorValor;
     for(let i = 0; i < 5; i++){
         botoes[i].value = valor;
         valor++;
     }
-    console.log(LastPageFind);
 }
 
 checkAdopt.addEventListener("change", ()=>{
@@ -99,7 +89,8 @@ function Pesquisar(){
                     return;
                 }
             }
-            ExibirLobo((lobosEncontrados[0].id - 1));
+            let index = lobos.indexOf(lobosEncontrados[0])
+            ExibirLobo((index));
             return;
         } else {
             alert("Nenhum lobo encontrado");
@@ -126,6 +117,10 @@ function Pagina(numero){
 
 function LimparLobos(){
     wolfList.innerHTML = "";
+}
+
+function adotarLobinho(index){
+    localStorage.setItem("IndexLobo", index);
 }
 
 /* Usar lista de lobos adotados somente */
@@ -164,6 +159,12 @@ function ExibirLobo(loboId, par){
         botaoAdotar.value = "Adotado"
         botaoAdotar.style.background = "#7AAC3A";
     }
+
+    botaoAdotar.addEventListener("click", ()=>{
+        adotarLobinho(loboId);
+        window.location.href = "./show-lobinho.html"
+
+    })
     
     let divInfo = document.createElement("div");
     divInfo.id = "wolf_header";
