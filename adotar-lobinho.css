@@ -5,15 +5,17 @@
     margin: 20px 50px;
     width: 1000px;
     align-self: center;
+    gap: 30px;
+    padding-top: 50px;
 }
 
 #wolfData{
     display: flex;
     flex-direction: row;
     column-gap: 20px;
-    align-items: start;
     width: 100%;
-    justify-content: space-evenly;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 #wolfData div{
@@ -22,14 +24,15 @@
     justify-content: start;
 }
 
-#nome_lobo{
+#wolfData h1 {
     margin-top: 20px;
     font-size: 60px;
     font-weight: 600;
     margin-bottom: 15px;
 }
-#id_lobo{
-    font-size: 25px;
+
+#wolfData p {
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -47,8 +50,11 @@
     row-gap: 10px;
     margin-bottom: 30px;
     margin-top: 10px;
+}
+
+#form h2 {
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: 0%;
 }
 
@@ -59,7 +65,7 @@
 }
 
 #nome_usuario{
-    width: 230%;
+    width: 220%;
 }
 
 #form input{
