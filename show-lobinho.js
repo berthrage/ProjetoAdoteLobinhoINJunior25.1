@@ -66,10 +66,7 @@ function PrepararLobo(){
 }
 
 function AdotarLobo(){
-    alert("lobo " + lobos[indexLobo].nome + " adotado");
-    lobos[indexLobo].adotado = true;
-    updateLocalStorage(lobos);
-    window.location.href = "./lista.html"   
+    window.location.href = "./adotar-lobinho.html"   
 }
 
 function ExcluirLobo(){
