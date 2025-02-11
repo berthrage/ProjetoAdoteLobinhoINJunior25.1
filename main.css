@@ -8,7 +8,9 @@
     --wolfie-baby-blue: #85CDF5;
     --footer-grey: #333333;
     --about-blue: #2C5680;
+    --about-blue-hovered: #1C3650;
     --highlight-yellow: #DEB959;
+    --highlight-yellow-hovered: #AA8D43;
 }
 
 body {
@@ -30,6 +32,16 @@ p {
 button {
     border: none;
     cursor: pointer;
+    color: white;
+    background-color: var(--highlight-yellow);
+}
+
+input,
+textarea {
+    border: 1px solid var(--footer-grey);
+    font-family: "Darker Grotesque", sans-serif;
+    color: black;
+    font-size: 24px;
 }
 
 /*---------------- HEADER ------------------*/
@@ -156,7 +168,7 @@ iframe{
 }
 
 .footer-quem-somos-button {
-    background-color: #DEB959;
+    background-color: var(--highlight-yellow);
     text-decoration: none;
     width: 144px;
     height: 35px;
@@ -168,7 +180,7 @@ iframe{
 }
 
 .footer-quem-somos-button:hover {
-    background-color: #aa8d43;
+    background-color: var(--highlight-yellow-hovered);
 }
 
 #section2 {
