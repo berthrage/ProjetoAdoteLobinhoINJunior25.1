@@ -1,3 +1,4 @@
+/*---------------- GLOBAL ------------------*/
 * {
     padding: 0;
     margin: 0;
@@ -6,11 +7,15 @@
 :root {
     --wolfie-baby-blue: #85CDF5;
     --footer-grey: #333333;
+    --about-blue: #2C5680;
+    --highlight-yellow: #DEB959;
 }
 
 body {
     font-family: "Darker Grotesque", sans-serif;
     background-color: var(--footer-grey);
+    z-index: -1;
+    position: relative;
 }
 
 a {
@@ -18,10 +23,16 @@ a {
     color: var(--footer-grey);
 }
 
+p {
+    font-weight: 100;
+}
+
 button {
     border: none;
     cursor: pointer;
 }
+
+/*---------------- HEADER ------------------*/
 
 header {
     background-color: var(--wolfie-baby-blue);
@@ -66,7 +77,7 @@ header a:hover .selection-line {
     width: 66%
 }
 
-/*-----------------------------------------------*/
+/*---------------- FOOTER ------------------*/
 
 footer {
     background-color: var(--footer-grey);
@@ -142,5 +153,4 @@ iframe{
 #section2 h4 {
     color: white;
     font-weight: 400;
-
 }
