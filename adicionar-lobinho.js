@@ -44,7 +44,7 @@ function adicionarLobinho(){
         emailDono: null,
     };
 
-    lobos.push(novoLobo);
+    lobos.unshift(novoLobo);
 
     updateLocalStorage(lobos);
     
@@ -57,5 +57,5 @@ function adicionarLobinho(){
 }
 
 
-let salvar = document.querySelector("#salvar");
+let salvar = document.querySelector("#save-button");
 salvar.addEventListener("click", ()=>{adicionarLobinho()})
