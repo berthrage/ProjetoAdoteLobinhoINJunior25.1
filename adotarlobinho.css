@@ -1,7 +1,71 @@
-main #main_content{
+#main_content{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 50px;
+}
+#wolfData{
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    align-items: start;
+}
+
+#nome_lobo{
+    margin-top: 20px;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+#id_lobo{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#imagem img{
+    clip-path: circle();
+    width: 350px;
+    height: auto;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 0%;
+}
+
+#name_age{
+    display: flex;
+    justify-content: space-between;
+}
+
+#nome_usuario{
+    width: 70%;
+}
+
+#name_age div{
+    display: flex;
+    flex-direction: column;
+}
+
+#email{
+    display: flex;
+    flex-direction: column;
+}
+
+#idade_usuario{
+    width: 100px;
+}
+
+#botao_adotar{
+    padding: 10px 30px;
+    font-size: 30px;
+    font-weight: 200;
 }
 
