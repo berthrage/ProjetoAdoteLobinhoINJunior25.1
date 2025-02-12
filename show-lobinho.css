@@ -3,8 +3,8 @@ h1  {
     font-weight: 800;
 }
 
-body{
-    background: white;
+main {
+    background-color: white;
 }
 
 #main_content {
@@ -12,10 +12,11 @@ body{
     align-items: center;
     flex-direction: column;
     row-gap: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin-left: 20%;
     margin-right: 20%;
+    height: 200%;
 }
 
 #main_content img {
@@ -25,8 +26,6 @@ body{
     transition: 0.5s;
     margin: 3px;
 }
-
-
 
 #imagem_botoes{
     display: flex;
@@ -57,16 +56,25 @@ body{
 #buttons button{
     padding: 22px 50px;
     color: white;
-    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
     font-weight: 480;
 }
 
 #adotar {
     background-color: #7AAC3A;
-    ;
+    transition: 0.5s;
+}
+
+#adotar:hover {
+    background-color: #557729;
 }
 
 #excluir {
     background-color: #DE5959;
+    transition: 0.5s;
+}
 
+#excluir:hover {
+    background-color: #a84343;
 }
