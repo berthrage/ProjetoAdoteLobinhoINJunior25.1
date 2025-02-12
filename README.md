@@ -1,9 +1,9 @@
 # ProjetoAdoteLobinhoINJunior25.1
 
 ## Sobre o projeto
-Projeto Adote um Lobinho do Processo Seletivo 25.1 da INJunior  
+Projeto 'Adote um Lobinho' do Processo Seletivo 25.1 da INJunior  
   
-Todas as funcionalidades implementadas corretamente. Estilização e estrutura o mais próximos possível do conceito do Figma, implementando melhorias aonde encontramos espaço.
+Todas as funcionalidades foram implementadas corretamente. A estilização e estrutura ficaram o mais próximo possível do conceito do Figma, com melhorias efetuadas à medida que necessário.
 
 
 ## Desenvolvido com <3 por
